@@ -40,12 +40,12 @@ public class AddBookActivity extends AppCompatActivity {
             String title = etTitle.getText().toString();
             String author = etAuthor.getText().toString();
             String status = spinner.getSelectedItem().toString();
-            saveBook(title,author,status);
+            //saveBook(title,author,status);
         });
 
     }
 
-    private void saveBook(String title, String author, String status){
+   /* private void saveBook(String title, String author, String status){
         BookController bookController = new BookController(this);
         boolean result = bookController.addBook(title,author,status);
 
@@ -57,7 +57,7 @@ public class AddBookActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.error_book_save), Toast.LENGTH_SHORT).show();
 
         }
-    }
+    }*/
 
     private void showBookActivity(){
         Intent intent =  new Intent(AddBookActivity.this, BookActivity.class);

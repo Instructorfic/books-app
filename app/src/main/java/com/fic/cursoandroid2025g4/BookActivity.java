@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fic.cursoandroid2025g4.controller.BookController;
+import com.fic.cursoandroid2025g4.data.repository.BaseRepository;
 import com.fic.cursoandroid2025g4.model.Book;
 import com.fic.cursoandroid2025g4.view.BookAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,8 +39,18 @@ public class BookActivity extends AppCompatActivity {
         recyclerViewBooks.setAdapter(bookAdapter);
 
         bookController = new BookController(this);
-        List<Book> books = bookController.getAllBooks();
-        bookAdapter.setData(books);
+        bookController.getAllBooks(new BaseRepository.RepositoryCallback<List<Book>>() {
+            @Override
+            public void onSuccess(List<Book> result) {
+                bookAdapter.setData(result);
+            }
+
+            @Override
+            public void onError(Throwable error) {
+                Log.e("BOOK_ACTIVITY","Ocurrió un error al obtener el listado de libros: " + error.getMessage());
+            }
+        });
+
 
         FloatingActionButton fabAddBook = findViewById(R.id.fabAddBook);
 
@@ -47,10 +58,10 @@ public class BookActivity extends AppCompatActivity {
             showAddBookActivity();
         });
 
-        Book book = bookController.getBookById(1);
+        /*Book book = bookController.getBookById(1);
         Log.d("BOOK 1 - AUTHOR", book.author);
         Log.d("BOOK 1 - TITLE", book.title);
-        Log.d("BOOK 1 - STATUS", book.status);
+        Log.d("BOOK 1 - STATUS", book.status);*/
 
 
 
