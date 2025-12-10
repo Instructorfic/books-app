@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CursoAndroid2025G4</string>
+    <string name="tvHelloWorldText">Hello World!</string>
+    <string name="btnTest">Enviar datos</string>
+    <string name="saludo_usuario">Hola %1$s, bienvenido a la app</string>
+    <string name="home_activity_main_message">Hola desde Home Activity</string>
+    <string name="activity_main_username_validate">El campo nombre de usuario no debe ser vacío</string>
+    <string name="activity_main_password_validate">El campo contraseña debe contener al menos 8 caracteres</string>
+    <string name="activity_main_email_validate">El correo electrónico no contiene un formato correcto</string>
+
+
+    <string-array name="status_book">
+        <item>TO READ</item>
+        <item>READING</item>
+        <item>PENDING</item>
+    </string-array>
+</resources>
