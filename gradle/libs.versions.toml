@@ -12,6 +12,8 @@ roomCommonJvm = "2.8.3"
 roomRuntime = "2.8.3"
 roomRuntimeJvm = "2.8.3"
 retrofit = "2.9.0"
+swiperefreshlayout = "1.1.0"
+
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -29,6 +31,9 @@ room-runtime-jvm = { group = "androidx.room", name = "room-runtime-jvm", version
 
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+
 
 
 

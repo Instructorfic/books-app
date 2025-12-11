@@ -7,12 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".BookActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBooks"
-        android:padding="8dp"
-        android:background="@color/white"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srBooks"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBooks"
+            android:padding="8dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddBook"

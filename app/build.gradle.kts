@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
 
+    implementation(libs.androidx.swiperefreshlayout)
+
 
     annotationProcessor(libs.room.compiler)
 
