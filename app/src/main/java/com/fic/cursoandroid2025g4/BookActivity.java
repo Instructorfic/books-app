@@ -30,6 +30,7 @@ public class BookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(BookActivity.class.getName(),"onCreate()");
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_book);
@@ -66,6 +67,7 @@ public class BookActivity extends AppCompatActivity {
             @Override
             public void onSuccess(List<Book> result) {
                 bookAdapter.setData(result);
+                Log.d(BookActivity.class.getName(),"Total de libros" + result.size());
                 swipeRefreshLayout.setRefreshing(false);
             }
 
@@ -81,4 +83,31 @@ public class BookActivity extends AppCompatActivity {
         Intent intent = new Intent(BookActivity.this,AddBookActivity.class);
         startActivity(intent);
     }
+
+    protected void onStart(){
+        super.onStart();
+        Log.d(BookActivity.class.getName(),"onStart()");
+    }
+
+    protected void onResume(){
+        super.onResume();
+        fetchBooks();
+        Log.d(BookActivity.class.getName(),"onResume()");
+    }
+
+    protected void onPause(){
+        super.onPause();
+        Log.d(BookActivity.class.getName(),"onPause()");
+    }
+
+    protected void onStop(){
+        super.onStop();
+        Log.d(BookActivity.class.getName(),"onStop()");
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(BookActivity.class.getName(),"onDestroy()");
+    }
 }
+
